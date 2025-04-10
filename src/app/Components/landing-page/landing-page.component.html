@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2 px-4 ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" routerLink="/">
+            <img src="./../../../assets/taraLogo.png" alt="TaraLogo" width="55" height="55" class="rounded-circle me-2">
+            <span class="fw-bold fs-5 d-none d-md-inline">Tara Yoga</span>
+        </a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav gap-lg-4 align-items-center text-center">
+                <li class="nav-item nav-border">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item nav-border">
+                    <a class="nav-link" routerLink="/about">About</a>
+                </li>
+                <li class="nav-item nav-border">
+                    <a class="nav-link" routerLink="/gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Search Icon -->
+        <div class="d-none d-lg-block">
+            <button class="btn btn-success rounded-circle">
+                <i class="bi bi-search text-white fs-5"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+
+<!-- hero-section.component.html -->
+<div class="hero-section d-flex align-items-center justify-content-center text-center">
+    <div class="overlay"></div>
+    <div class="content text-white">
+        <h1 class="hero-title">EMBRACE<br>FLEXIBILITY</h1>
+        <p class="hero-subtitle">PREMIUM YOGA MATS FOR EVERY PRACTICE</p>
+        <button class="btn btn-success rounded-pill px-4 py-2 mt-3">Explore now</button>
+    </div>
+</div>
+
+
+<!-- yoga-collection.component.html -->
+<div class="container-fluid yoga-collection py-4">
+    <div class="row align-items-center">
+        <div class="col-lg-6 text-content">
+            <div class="heading-section mb-5">
+                <h1 class="display-4 fw-bold">GET TO <br> KNOW WHAT <br> WE HAVE</h1>
+            </div>
+
+            <div class="image-container mb-4 mb-lg-0">
+                <img src="../../../assets/MeditationLid.png" alt="Child doing yoga"
+                    class="img-fluid rounded yoga-image">
+            </div>
+        </div>
+
+        <div class="col-lg-6 d-flex flex-column">
+            <div class="image-container mb-5">
+                <img src="../../../assets/MeditationAdult.png" alt="Woman doing yoga in mountains"
+                    class="img-fluid rounded yoga-image">
+            </div>
+
+            <div class="explore-section text-center">
+                <div class="circle-button mx-auto mb-3">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+                <h2 class="text-uppercase fw-bold">Explore the<br>collections</h2>
+            </div>
+        </div>
+    </div>
+</div>
