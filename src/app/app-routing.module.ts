@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './Components/landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'taraYogaMat', pathMatch: 'full' },
-  { path: 'taraYogaMat', component: LandingPageComponent }];
+  { path: '', redirectTo: 'taraGreenYoga', pathMatch: 'full' },
+  { path: 'taraGreenYoga', component: LandingPageComponent }];
 
 
 
