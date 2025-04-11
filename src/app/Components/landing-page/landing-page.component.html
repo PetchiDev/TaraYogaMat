@@ -56,6 +56,10 @@
 <div class="container-fluid yoga-collection py-4">
     <div class="row align-items-center">
         <div class="col-lg-6 text-content">
+            <div class="green-line-img before-heading">
+                <img src="../../../assets/LeftVector.png" alt="Decorative green line">
+            </div>
+
             <div class="heading-section mb-5">
                 <h1 class="display-4 fw-bold">GET TO <br> KNOW WHAT <br> WE HAVE</h1>
             </div>
@@ -71,13 +75,232 @@
                 <img src="../../../assets/MeditationAdult.png" alt="Woman doing yoga in mountains"
                     class="img-fluid rounded yoga-image">
             </div>
-
             <div class="explore-section text-center">
                 <div class="circle-button mx-auto mb-3">
                     <i class="bi bi-arrow-right"></i>
                 </div>
-                <h2 class="text-uppercase fw-bold">Explore the<br>collections</h2>
+
+                <h2 class="text-uppercase fw-bold">Explore the<br>collections
+
+                </h2>
+
+            </div>
+            <div class="green-line-img after-subheading">
+                <img src="../../../assets/RightVector.png" alt="Decorative green line">
             </div>
         </div>
     </div>
 </div>
+
+
+
+<!-------Adult Yoga Mat Collection-->
+<!-- yoga-mat-collection.component.html -->
+<div class="container yoga-collection py-5">
+    <div class="row text-center mb-4">
+        <div class="col-12">
+            <h1 class="collection-title">ADULT YOGA MAT COLLECTION</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let mat of yogaMats" class="col-md-6 col-lg-4 mb-4">
+            <div class="mat-card">
+                <div class="mat-image-container">
+                    <img [src]="mat.image" [alt]="mat.name + ' - ' + mat.color" class="img-fluid mat-image">
+                    <button class="favorite-btn" aria-label="Add to favorites">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                </div>
+
+                <div class="mat-details p-3">
+                    <h5 class="mat-name">{{ mat.name }} - {{ mat.color }}</h5>
+
+                    <div class="rating">
+                        <span class="stars">
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </span>
+                        <span class="rating-value">{{ mat.rating }}</span>
+                    </div>
+
+                    <a href="#" class="view-details">View details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<!---Child Yoga Mat Collection-->
+<div class="container yoga-collection py-5">
+    <div class="row text-center mb-4">
+        <div class="col-12">
+            <h1 class="collection-title">CHILD YOGA MAT COLLECTION</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let mat of childYogaMats" class="col-md-6 col-lg-4 mb-4">
+            <div class="mat-card">
+                <div class="mat-image-container">
+                    <img [src]="mat.image" [alt]="mat.name + ' - ' + mat.color" class="img-fluid mat-image">
+                    <button class="favorite-btn" aria-label="Add to favorites">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                </div>
+
+                <div class="mat-details p-3">
+                    <h5 class="mat-name">{{ mat.name }} - {{ mat.color }}</h5>
+
+                    <div class="rating">
+                        <span class="stars">
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </span>
+                        <span class="rating-value">{{ mat.rating }}</span>
+                    </div>
+
+                    <a href="#" class="view-details">View details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!---Contact Section-->
+<!-- help-contact.component.html -->
+<div class="container py-5">
+    <div class="help-contact-container">
+        <div class="row g-0">
+            <!-- Left section with illustration -->
+            <div class="col-lg-5 illustration-section d-flex align-items-center justify-content-center">
+                <div class="illustration-wrapper text-center">
+                    <img src="./../../../assets/NeedHelp.png" alt="Woman meditating"
+                        class="img-fluid yoga-illustration">
+                </div>
+            </div>
+
+            <!-- Right section with form -->
+            <div class="col-lg-7 form-section">
+                <div class="form-header">
+                    <h2 class="help-title">NEED HELP?<span class="green-underline"></span></h2>
+                    <p class="help-subtitle">We are here to assist. Don't hesitate to reach us.</p>
+                </div>
+
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+                    <div class="form-group mb-3">
+                        <input type="text" formControlName="name" class="form-control" placeholder="Name"
+                            [ngClass]="{'is-invalid': submitted && contactForm.controls['name'].errors}">
+                        <div *ngIf="submitted && contactForm.controls['name'].errors" class="invalid-feedback">
+                            Name is required
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input type="email" formControlName="email" class="form-control" placeholder="Email"
+                            [ngClass]="{'is-invalid': submitted && contactForm.controls['email'].errors}">
+                        <div *ngIf="submitted && contactForm.controls['email'].errors?.['required']"
+                            class="invalid-feedback">
+                            Email is required
+                        </div>
+                        <div *ngIf="submitted && contactForm.controls['email'].errors?.['email']"
+                            class="invalid-feedback">
+                            Please enter a valid email
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input type="tel" formControlName="mobile" class="form-control" placeholder="Mobile Number"
+                            [ngClass]="{'is-invalid': submitted && contactForm.controls['mobile'].errors}">
+                        <div *ngIf="submitted && contactForm.controls['mobile'].errors" class="invalid-feedback">
+                            Mobile number is required
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <textarea formControlName="message" class="form-control message-area"
+                            placeholder="Type your message here" rows="5"
+                            [ngClass]="{'is-invalid': submitted && contactForm.controls['message'].errors}"></textarea>
+                        <div *ngIf="submitted && contactForm.controls['message'].errors" class="invalid-feedback">
+                            Message is required
+                        </div>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success send-btn">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer.component.html -->
+<footer>
+    <!-- Green footer section -->
+    <div class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon-circle">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <span>{{ contactInfo.phone }}</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon-circle">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <span>{{ contactInfo.email }}</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon-circle">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <span>{{ contactInfo.location }}</span>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <div class="links-column">
+                        <a *ngFor="let link of footerLinks.firstColumn" [href]="link.url">
+                            {{ link.title }}
+                        </a>
+                    </div>
+
+                    <div class="links-column">
+                        <a *ngFor="let link of footerLinks.secondColumn" [href]="link.url">
+                            {{ link.title }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark footer section -->
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="bottom-footer-content">
+                <div class="copyright">
+                    © {{ currentYear }} TARA GREEN YOGA. ALL RIGHTS RESERVED
+                </div>
+
+                <div class="social-icons">
+                    <a *ngFor="let social of socialMedia" [href]="social.url" [attr.aria-label]="social.name">
+                        <i [class]="social.icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
