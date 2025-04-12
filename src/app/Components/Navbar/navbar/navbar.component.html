@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2 px-4 ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" routerLink="/">
+            <img src="./../../../assets/taraLogo.png" alt="TaraLogo" width="55" height="55" class="rounded-circle me-2">
+            <span class="fw-bold fs-5 d-none d-md-inline"></span>
+        </a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav gap-lg-4 align-items-center text-center">
+                <li class="nav-item nav-border">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item nav-border">
+                    <a class="nav-link" routerLink="/about">About</a>
+                </li>
+                <li class="nav-item nav-border">
+                    <a class="nav-link" routerLink="/gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Search Icon -->
+        <div class="d-none d-lg-block">
+            <button class="btn btn-success rounded-circle">
+                <i class="bi bi-search text-white fs-5"></i>
+            </button>
+        </div>
+    </div>
+</nav>

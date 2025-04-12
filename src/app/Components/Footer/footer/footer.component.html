@@ -1,0 +1,64 @@
+<footer>
+    <!-- Green footer section -->
+    <div class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon-circle">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <span>{{ contactInfo.phone }}</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon-circle">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <span>{{ contactInfo.email }}</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon-circle">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <span>{{ contactInfo.location }}</span>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <div class="links-column">
+                        <a *ngFor="let link of footerLinks.firstColumn" [href]="link.url">
+                            {{ link.title }}
+                        </a>
+                    </div>
+
+                    <div class="links-column">
+                        <a *ngFor="let link of footerLinks.secondColumn" [href]="link.url">
+                            {{ link.title }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark footer section -->
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="bottom-footer-content">
+                <div class="copyright">
+                    © {{ currentYear }} TARA GREEN YOGA. ALL RIGHTS RESERVED
+                </div>
+
+                <div class="social-icons">
+                    <a *ngFor="let social of socialMedia" [href]="social.url" [attr.aria-label]="social.name">
+                        <i [class]="social.icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

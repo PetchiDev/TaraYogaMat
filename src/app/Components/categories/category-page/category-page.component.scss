@@ -10,7 +10,6 @@ html {
     z-index: 1030;
 }
 
-
 .navbar-nav .nav-link {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -23,7 +22,6 @@ html {
 .navbar-nav .nav-link.active {
     color: #28a745;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .nav-item.nav-border {
@@ -40,7 +38,6 @@ html {
 .navbar-brand span {
     color: #000;
 }
-
 
 @media (max-width: 991.98px) {
     .navbar-nav .nav-item {
@@ -65,68 +62,6 @@ html {
         display: none !important;
     }
 }
-
-
-
-//////////////////Hero Section/////////////////
-// hero-section.component.scss
-
-.hero-section {
-    position: relative;
-    height: 100vh;
-    background: url('./../../../assets/HeroSection.png') no-repeat center center/cover;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.3); // optional dark overlay
-        z-index: 1;
-    }
-
-    .content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .hero-title {
-        font-size: 4rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        line-height: 1.2;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-        font-weight: 400;
-        letter-spacing: 2px;
-        margin-top: 1rem;
-    }
-
-    button {
-        font-weight: 600;
-        font-size: 1rem;
-    }
-}
-
-// Responsive tweaks
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-}
-
 
 //////////////////////Know section/////////////
 /* yoga-collection.component.scss */
@@ -239,7 +174,6 @@ html {
     }
 }
 
-
 // Media queries for responsive design
 @media (max-width: 992px) {
     .heading-section h1 {
@@ -261,7 +195,6 @@ html {
         height: 60px;
     }
 }
-
 
 ////////////////////////Adult Yoga Collection/////////
 /* yoga-mat-collection.component.scss */
@@ -437,157 +370,6 @@ html {
     }
 }
 
-
-/* help-contact.component.scss */
-.help-contact-container {
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    background-color: #fff;
-    border: 1px solid #eee;
-}
-
-.illustration-section {
-    background-color: white;
-    padding: 2rem;
-
-    .illustration-wrapper {
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .yoga-illustration {
-        max-width: 90%;
-        height: auto;
-    }
-}
-
-.form-section {
-    padding: 2.5rem 2rem;
-
-    @media (min-width: 992px) {
-        padding: 3rem;
-    }
-}
-
-.form-header {
-    margin-bottom: 2rem;
-}
-
-.help-title {
-    font-weight: 800;
-    font-family: 'Arial', sans-serif;
-    font-size: 2rem;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-
-    .green-underline {
-        position: absolute;
-        bottom: -5px;
-        right: -15px;
-        width: 100px;
-        height: 4px;
-        background-color: #4caf50;
-        display: block;
-
-        &:after {
-            content: '';
-            position: absolute;
-            right: -15px;
-            width: 15px;
-            height: 4px;
-            background-color: #4caf50;
-        }
-    }
-}
-
-.help-subtitle {
-    color: #555;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-form {
-    .form-control {
-        padding: 0.75rem 1rem;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-
-        &:focus {
-            box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
-            border-color: #4caf50;
-        }
-
-        &::placeholder {
-            color: #aaa;
-        }
-    }
-
-    .message-area {
-        resize: none;
-        min-height: 120px;
-    }
-}
-
-.send-btn {
-    padding: 0.6rem 2rem;
-    font-weight: 500;
-    border-radius: 5px;
-    background-color: #4caf50;
-    border: none;
-    transition: all 0.3s ease;
-
-    &:hover {
-        background-color: darken(#4caf50, 5%);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
-    }
-
-    &:active {
-        transform: translateY(0);
-    }
-}
-
-// Responsive adjustments
-@media (max-width: 991.98px) {
-    .help-title {
-        font-size: 1.8rem;
-    }
-
-    .illustration-section {
-        order: 2;
-        padding: 1.5rem;
-    }
-
-    .form-section {
-        order: 2;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .help-title {
-        font-size: 1.5rem;
-
-        .green-underline {
-            width: 70px;
-        }
-    }
-
-    .help-subtitle {
-        font-size: 0.9rem;
-    }
-
-    .form-section {
-        padding: 2rem 1.5rem;
-    }
-
-    .send-btn {
-        padding: 0.5rem 1.5rem;
-        width: 100%;
-    }
-}
-
 //////////Footer////
 /* footer.component.scss */
 :host {
@@ -649,7 +431,6 @@ footer {
     font-size: 18px;
 }
 
-
 /*Related Links Styles*/
 .related-articles {
     font-family: 'Segoe UI', sans-serif;
@@ -685,11 +466,7 @@ footer {
     text-decoration: none;
 }
 
-
-
 /*Related Links Styles*/
-
-
 /* Footer Links Styles */
 .footer-links {
     display: flex;
@@ -784,4 +561,95 @@ footer {
         font-size: 12px;
         text-align: center;
     }
+}
+
+.thumbnail-list img {
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail-list img.active-thumb {
+    border-color: #000;
+}
+
+.main-image {
+    position: relative;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-arrow.left {
+    left: 10px;
+}
+
+.nav-arrow.right {
+    right: 30px;
+}
+
+.color-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 60px;
+}
+
+.rounded {
+    height: 81vh;
+}
+
+.container.product-detail.my-4 {
+    padding: 20px;
+}
+
+.custom-breadcrumb {
+    font-size: 15px;
+    color: #6c6c6c;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    padding: 0 10px;
+    margin: 1rem 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-breadcrumb a {
+    text-decoration: none;
+    color: #6c6c6c;
+    transition: color 0.2s;
+}
+
+.custom-breadcrumb a:hover {
+    color: #000;
+}
+
+.custom-breadcrumb .separator {
+    margin: 0 4px;
+    color: #aaa;
+}
+
+.custom-breadcrumb .active {
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.thumbnail-list img.active-thumb {
+    border-color: #4caf50;
 }

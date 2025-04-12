@@ -1,55 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2 px-4 ">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" routerLink="/">
-            <img src="./../../../assets/taraLogo.png" alt="TaraLogo" width="55" height="55" class="rounded-circle me-2">
-            <span class="fw-bold fs-5 d-none d-md-inline">Tara Yoga</span>
-        </a>
-
-        <!-- Toggler -->
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav gap-lg-4 align-items-center text-center">
-                <li class="nav-item nav-border">
-                    <a class="nav-link" routerLink="/">Home</a>
-                </li>
-                <li class="nav-item nav-border">
-                    <a class="nav-link" routerLink="/about">About</a>
-                </li>
-                <li class="nav-item nav-border">
-                    <a class="nav-link" routerLink="/gallery">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/contact">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Search Icon -->
-        <div class="d-none d-lg-block">
-            <button class="btn btn-success rounded-circle">
-                <i class="bi bi-search text-white fs-5"></i>
-            </button>
-        </div>
-    </div>
-</nav>
-
-
+<app-navbar></app-navbar>
 <!-- hero-section.component.html -->
 <div class="hero-section d-flex align-items-center justify-content-center text-center">
     <div class="overlay"></div>
     <div class="content text-white">
-        <h1 class="hero-title">EMBRACE<br>FLEXIBILITY</h1>
-        <p class="hero-subtitle">PREMIUM YOGA MATS FOR EVERY PRACTICE</p>
-        <button class="btn btn-success rounded-pill px-4 py-2 mt-3">Explore now</button>
+        <h1 #heroTitle class="hero-title">EMBRACE<br>FLEXIBILITY</h1>
+        <p #heroSubtitle class="hero-subtitle">PREMIUM YOGA MATS FOR EVERY PRACTICE</p>
+        <button #heroButton class="btn btn-success rounded-pill px-4 py-2 mt-3">Explore now</button>
     </div>
 </div>
+
+
 
 
 <!-- yoga-collection.component.html -->
@@ -76,7 +36,7 @@
                     class="img-fluid rounded yoga-image">
             </div>
             <div class="explore-section text-center">
-                <div class="circle-button mx-auto mb-3">
+                <div class="circle-button mx-auto mb-3" (click)="routeCategory()">
                     <i class="bi bi-arrow-right"></i>
                 </div>
 
@@ -170,6 +130,60 @@
 
 </div>
 
+
+<div class="related-articles container mt-5">
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <h3 class="fw-bold">RELATED ARTICLES</h3>
+        <!-- <a class="view-all-link" href="#">View all</a> -->
+    </div>
+
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="article-card">
+                <div class="position-relative">
+                    <a href=" https://youtu.be/OiXubLgFsfw?si=pZ_T5jhs8c-GuRNQ" target="_blank">
+
+                        <img src="./../../../assets/YoutubeImage.png" class="img-fluid rounded" alt="Yoga Pose"></a>
+                </div>
+                <p class="article-caption mt-2">
+                    How to make an effort to learn? <a href=" https://youtu.be/OiXubLgFsfw?si=pZ_T5jhs8c-GuRNQ"
+                        target="_blank">Watch now</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="article-card">
+                <a href="https://thepoweryoga.com/why-you-need-a-yoga-mat-benefits-and-uses-explained/"
+                    target="_blank"><img src="./../../../assets/YogaMat.png" class="img-fluid rounded" alt="Yoga Mat">
+                </a>
+                <p class="article-caption mt-2">
+                    How yoga mat helps you? <a
+                        href="https://thepoweryoga.com/why-you-need-a-yoga-mat-benefits-and-uses-explained/"
+                        target="_blank">Read now</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="article-card">
+                <a href="  https://www.hopkinsmedicine.org/health/wellness-and-prevention/9-benefits-of-yoga"
+                    target="_blank">
+                    <img src="./../../../assets/YogaRelatedArticles.png" class="img-fluid rounded"
+                        alt="Benefits of Yoga"> </a>
+                <p class="article-caption mt-2">
+                    Benefits of doing yoga? <a href="#">Read now</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!---Contact Section-->
 <!-- help-contact.component.html -->
 <div class="container py-5">
@@ -240,67 +254,4 @@
 
 
 <!-- footer.component.html -->
-<footer>
-    <!-- Green footer section -->
-    <div class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="icon-circle">
-                            <i class="bi bi-telephone-fill"></i>
-                        </div>
-                        <span>{{ contactInfo.phone }}</span>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="icon-circle">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                        <span>{{ contactInfo.email }}</span>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="icon-circle">
-                            <i class="bi bi-geo-alt"></i>
-                        </div>
-                        <span>{{ contactInfo.location }}</span>
-                    </div>
-                </div>
-
-                <!-- Footer Links -->
-                <div class="footer-links">
-                    <div class="links-column">
-                        <a *ngFor="let link of footerLinks.firstColumn" [href]="link.url">
-                            {{ link.title }}
-                        </a>
-                    </div>
-
-                    <div class="links-column">
-                        <a *ngFor="let link of footerLinks.secondColumn" [href]="link.url">
-                            {{ link.title }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dark footer section -->
-    <div class="bottom-footer">
-        <div class="container">
-            <div class="bottom-footer-content">
-                <div class="copyright">
-                    © {{ currentYear }} TARA GREEN YOGA. ALL RIGHTS RESERVED
-                </div>
-
-                <div class="social-icons">
-                    <a *ngFor="let social of socialMedia" [href]="social.url" [attr.aria-label]="social.name">
-                        <i [class]="social.icon"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<app-footer></app-footer>

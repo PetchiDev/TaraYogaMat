@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import anime from 'animejs/lib/anime.min.js'; // ✅ Correct import
+
 interface YogaMat {
   id: number;
   name: string;
@@ -18,7 +21,7 @@ export class LandingPageComponent {
   contactForm: FormGroup;
   submitted = false;
 
-  constructor(private readonly formBuilder: FormBuilder) {
+  constructor(private readonly formBuilder: FormBuilder, private readonly route: Router) {
     this.contactForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -124,5 +127,12 @@ export class LandingPageComponent {
     { name: 'YouTube', icon: 'bi bi-youtube', url: '#' },
     { name: 'Twitter', icon: 'bi bi-twitter-x', url: '#' }
   ];
+
+
+
+  routeCategory() {
+    this.route.navigate(['/categories']);
+  }
+
 
 }
