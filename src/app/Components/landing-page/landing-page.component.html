@@ -10,37 +10,88 @@
 </div>
 <!-- yoga-collection.component.html -->
 <div class="container-fluid yoga-collection py-4">
-    <div class="row align-items-center">
+    <!-- 🔰 Add 'About Us' text above all -->
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h2 class="about-heading text-success fw-bold">About Us</h2>
+        </div>
+    </div>
+    <div class="row ">
         <div class="col-lg-6 text-content">
-            <div class="green-line-img before-heading">
-                <img src="../../../assets/LeftVector.png" alt="Decorative green line">
-            </div>
+            <!-- <div class="green-line-img before-heading">
+                <img src="../../../assets/LeftVector.png" alt="Decorative green line" />
+            </div> -->
+            <!-- 🔄 Replaced heading with paragraph -->
             <div class="heading-section mb-5">
-                <h1 class="display-4 fw-bold">GET TO <br> KNOW WHAT <br> WE HAVE</h1>
+                <p class="about-description">
+                    🌱 Tara Green Yoga has been started with a vision of providing environment friendly cotton yoga mats
+                    to
+                    maximum number of people.
+                </p>
+                <p class="about-description">
+                    🌱 Yoga is flourishing everywhere nowadays. We encourage people to practice on cotton mats which are
+                    breathable, environment-friendly, durable and cost-efficient.
+                </p>
+                <p class="about-description">
+                    🌱 The feel is so pleasant while practicing postures and holds even greater significance during
+                    therapy, pranayama, meditation and yoga nidra sessions.
+                </p>
             </div>
             <div class="image-container mb-4 mb-lg-0">
                 <img src="../../../assets/MeditationLid.png" alt="Child doing yoga"
-                    class="imgHeight-fluid rounded yoga-image">
+                    class="imgHeight-fluid rounded yoga-image" />
             </div>
         </div>
         <div class="col-lg-6 d-flex flex-column">
             <div class="image-container mb-5">
                 <img src="../../../assets/MeditationAdult.png" alt="Woman doing yoga in mountains"
-                    class="imgHeight-fluid rounded yoga-image">
+                    class="imgHeight-fluid rounded yoga-image" />
             </div>
             <div class="explore-section text-center">
                 <div class="circle-button mx-auto mb-3" (click)="routeCategory()">
                     <i class="bi bi-arrow-right"></i>
                 </div>
-                <h2 class="text-uppercase fw-bold hero-btn">Explore the<br>collections
-                </h2>
+                <h2 class="text-uppercase fw-bold hero-btn">Explore the<br />collections</h2>
             </div>
             <div class="green-line-img after-subheading">
-                <img src="../../../assets/RightVector.png" alt="Decorative green line">
+                <img src="../../../assets/RightVector.png" alt="Decorative green line" />
             </div>
         </div>
     </div>
 </div>
+
+
+<!--Product and Package-->
+<section class="info-section container py-5">
+    <div class="row g-4">
+        <!-- Product Info Card -->
+        <div class="col-md-6">
+            <div class="info-card-wrapper">
+                <div class="info-card product-card">
+                    <h3 class="fw-bold mb-3">Product Info</h3>
+                    <p>Learn more about our eco-friendly cotton yoga mats.</p>
+                </div>
+                <div class="hover-popup">
+                    <img src="./../../../assets/Product1.jpg" alt="Product Details">
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Info Card -->
+        <div class="col-md-6">
+            <div class="info-card-wrapper">
+                <div class="info-card package-card">
+                    <h3 class="fw-bold mb-3">Package Info</h3>
+                    <p>Discover what's included in our eco-packaged delivery.</p>
+                </div>
+                <div class="hover-popup">
+                    <img src="./../../../assets/Product2.jpg" alt="Package Details">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-------Adult Yoga Mat Collection-->
 <!-- yoga-mat-collection.component.html -->
 <div class="container yoga-collection py-5">

@@ -66,9 +66,9 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     });
 
     // 🌿 Yoga Heading + Image fade-in on scroll both directions
-    gsap.from('.heading-section h1', {
+    gsap.from('.heading-section p', {
       scrollTrigger: {
-        trigger: '.heading-section h1',
+        trigger: '.heading-section p',
         start: 'top 80%',
         toggleActions: 'play reverse play reverse'
       },
