@@ -16,7 +16,8 @@
                         <div class="icon-circle">
                             <i class="bi bi-envelope"></i>
                         </div>
-                        <span>{{ contactInfo.email }}</span>
+                        <span> <a href="mailto:tgy.taragreenyoga@gmail.com"
+                                style="color: white;text-decoration: none;">{{ contactInfo.email }}</a></span>
                     </div>
 
                     <div class="contact-item">
@@ -36,7 +37,7 @@
                     </div>
 
                     <div class="links-column">
-                        <a *ngFor="let link of footerLinks.secondColumn" [href]="link.url">
+                        <a *ngFor="let link of footerLinks.secondColumn">
                             {{ link.title }}
                         </a>
                     </div>
@@ -54,7 +55,7 @@
                 </div>
 
                 <div class="social-icons">
-                    <a *ngFor="let social of socialMedia" [href]="social.url" [attr.aria-label]="social.name">
+                    <a *ngFor="let social of socialMedia" [attr.aria-label]="social.name">
                         <i [class]="social.icon"></i>
                     </a>
                 </div>

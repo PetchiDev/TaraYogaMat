@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryPageComponent } from './Components/categories/category-page/category-page.component';
 import { NavbarComponent } from './Components/Navbar/navbar/navbar.component';
 import { FooterComponent } from './Components/Footer/footer/footer.component';
+import { AboutUsComponent } from './Components/Aboutus/about-us/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     CategoryPageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

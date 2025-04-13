@@ -5,34 +5,32 @@
 <div class="container yoga-collection py-5">
     <div class="row text-center mb-4">
         <div class="col-12">
-            <h1 class="collection-title">ADULT YOGA MAT COLLECTION</h1>
+            <h1 class="collection-title">YOGA MAT COLLECTION</h1>
         </div>
     </div>
 
     <div class="row">
         <div *ngFor="let mat of yogaMats" class="col-md-6 col-lg-4 mb-4">
-            <div class="mat-card">
+            <div class="mat-card tilt-card" (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave($event)">
                 <div class="mat-image-container">
-                    <img [src]="mat.image" [alt]="mat.name + ' - ' + mat.color" class=" mat-image">
+                    <img [src]="mat.image" [alt]="mat.name + ' - ' + mat.color" class="mat-image" />
                     <button class="favorite-btn" aria-label="Add to favorites">
                         <i class="bi bi-heart"></i>
                     </button>
                 </div>
-
                 <div class="mat-details p-3">
                     <h5 class="mat-name">{{ mat.name }} - {{ mat.color }}</h5>
-
                     <div class="rating">
                         <span class="stars">
                             <i class="bi bi-star-fill text-warning"></i>
                         </span>
                         <span class="rating-value">{{ mat.rating }}</span>
                     </div>
-
                     <a href="#" class="view-details">View details</a>
                 </div>
             </div>
         </div>
+
     </div>
 
 
@@ -44,7 +42,7 @@
 <div class="container yoga-collection py-5">
     <div class="row text-center mb-4">
         <div class="col-12">
-            <h1 class="collection-title">CHILD YOGA MAT COLLECTION</h1>
+            <h1 class="collection-title">MEDITATION / KIDS YOGA MAT COLLECTION</h1>
         </div>
     </div>
 
@@ -136,7 +134,10 @@
 
             <div class="d-flex align-items-center gap-2 mb-3">
                 <input type="number" [(ngModel)]="quantity" min="1" class="form-control quantity-input">
-                <button class="btn btn-success flex-fill">Place Order</button>
+                <button class="btn btn-success flex-fill d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-whatsapp text-white"></i>
+                    Place Order
+                </button>
                 <button class="btn btn-outline-secondary flex-fill">❤ Favourite</button>
             </div>
         </div>

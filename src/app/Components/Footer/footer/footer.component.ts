@@ -12,25 +12,23 @@ export class FooterComponent {
   //////////////Footer/////////////
   currentYear: number = new Date().getFullYear();
   contactInfo = {
-    phone: '+91 96006 58765',
-    email: 'Prasannabalaji@Gmail.com',
+    phone: '+91 7200658765',
+    email: 'tgy.taragreenyoga@gmail.com',
     location: 'Chennai, India'
   };
 
   footerLinks = {
     firstColumn: [
-      { title: 'About', url: '/about' },
-      { title: 'Who We Are', url: '/who-we-are' },
+      { title: 'Who We Are', url: '/aboutUs' },
       { title: 'Careers', url: '/careers' },
       { title: 'Contact Us', url: '/contact' },
       { title: 'Help', url: '/help' }
     ],
     secondColumn: [
-      { title: 'Help', url: '/help' },
-      { title: 'Support', url: '/support' },
-      { title: 'Terms & Conditions', url: '/terms' },
-      { title: 'Cookies', url: '/cookies' },
-      { title: 'Fair Use Policy', url: '/fair-use-policy' }
+      { title: 'Help', },
+      { title: 'Support', },
+      { title: 'Terms & Conditions', },
+      { title: 'Fair Use Policy', }
     ]
   };
 

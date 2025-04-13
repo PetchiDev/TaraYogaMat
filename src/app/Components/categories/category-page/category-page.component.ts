@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger); // ✅ Register plugin
 interface YogaMat {
   id: number;
   name: string;
@@ -14,7 +17,7 @@ interface YogaMat {
   styleUrls: ['./category-page.component.scss']
 })
 
-export class CategoryPageComponent {
+export class CategoryPageComponent implements AfterViewInit {
 
   // Define color-based image sets
   imageSets: { [key: string]: string[] } = {
@@ -132,4 +135,46 @@ export class CategoryPageComponent {
   ];
 
   showAll = false;
+
+
+  ngAfterViewInit(): void {
+    gsap.utils.toArray('.tilt-card').forEach((card: any, index: number) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+          toggleActions: 'play reverse play reverse'
+        },
+        y: 100,
+        opacity: 0,
+        scale: 0.95,
+        rotate: index % 2 === 0 ? -2 : 2,
+        duration: 1,
+        ease: 'power4.out'
+      });
+    });
+  }
+
+  // 🌀 3D Hover Effect Methods
+  onMouseMove(event: MouseEvent) {
+    const card = event.currentTarget as HTMLElement;
+
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = -(y - centerY) / 15;
+    const rotateY = (x - centerX) / 15;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  }
+
+  onMouseLeave(event: MouseEvent) {
+    const card = event.currentTarget as HTMLElement;
+    card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+  }
+
+
 }
