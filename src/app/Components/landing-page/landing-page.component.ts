@@ -313,7 +313,7 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
 
 
   routeCategory() {
-    this.route.navigate(['/collections']);
+    this.route.navigate(['/gallery']);
   }
 
   product1Image = false;

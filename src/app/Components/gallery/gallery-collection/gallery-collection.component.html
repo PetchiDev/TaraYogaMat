@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="gallery-wrapper container py-5">
+
+    <!-- Title -->
+    <div class="text-center mb-5">
+        <h2 class="gallery-title">OUR GALLERY</h2>
+        <div class="underline mx-auto mt-2"></div>
+    </div>
+
+    <!-- Grid -->
+    <div class="row gx-4 gy-4">
+        <div class="col-6 col-md-4" *ngFor="let img of images; let i = index">
+            <div class="gallery-item" [attr.data-index]="i">
+                <img [src]="img" alt="Gallery Image" class="gallery-img" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

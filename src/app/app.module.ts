@@ -10,6 +10,7 @@ import { CategoryPageComponent } from './Components/categories/category-page/cat
 import { NavbarComponent } from './Components/Navbar/navbar/navbar.component';
 import { FooterComponent } from './Components/Footer/footer/footer.component';
 import { AboutUsComponent } from './Components/Aboutus/about-us/about-us.component';
+import { GalleryCollectionComponent } from './Components/gallery/gallery-collection/gallery-collection.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { AboutUsComponent } from './Components/Aboutus/about-us/about-us.compone
     CategoryPageComponent,
     NavbarComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    GalleryCollectionComponent
   ],
   imports: [
     BrowserModule,
