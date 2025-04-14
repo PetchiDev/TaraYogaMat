@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,13 +7,17 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  @ViewChild('contactSection') contactSection!: ElementRef;
 
+  public scrollIntoView() {
+    this.contactSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 
   //////////////Footer/////////////
   currentYear: number = new Date().getFullYear();
   contactInfo = {
     phone: '+91 7200658765',
-    email: 'tgy.taragreenyoga@gmail.com',
+    email: 'business@tgyexportenterprise.com',
     location: 'Chennai, India'
   };
 

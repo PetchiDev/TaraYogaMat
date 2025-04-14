@@ -3,9 +3,19 @@
 <div class="hero-section d-flex align-items-center justify-content-center text-center">
     <div class="overlay"></div>
     <div class="content text-white">
-        <h1 #heroTitle class="hero-title">EMBRACE<br>FLEXIBILITY</h1>
-        <p #heroSubtitle class="hero-subtitle">PREMIUM YOGA MATS FOR EVERY PRACTICE</p>
-        <button #heroButton class="btn btn-success rounded-pill px-4 py-2 mt-3">Explore now</button>
+        <h1 #heroTitle class="hero-title">
+            It's time to feel the perfect<br> grounding experience
+        </h1>
+
+        <p #heroSubtitle class="hero-subtitle mb-1">Hop on to your</p>
+        <p #heroSubtitle class="hero-subtitle fw-bold text-uppercase mb-1">Environment Friendly</p>
+        <p #heroSubtitle class="hero-subtitle fw-bold text-uppercase mb-1">100% Cotton Handloom Mats</p>
+        <p #heroSubtitle class="hero-subtitle">from</p>
+
+        <button #heroButton class="btn btn-success rounded-pill px-4 py-2 mt-3">
+            Tara Green Yoga
+        </button>
+
     </div>
 </div>
 <!-- yoga-collection.component.html -->
@@ -23,28 +33,21 @@
             </div> -->
             <!-- 🔄 Replaced heading with paragraph -->
             <div class="heading-section mb-5">
-                <p class="about-description">
+                <h2 class="about-description">
                     🌱 Tara Green Yoga has been started with a vision of providing environment friendly cotton yoga mats
                     to
                     maximum number of people.
-                </p>
-                <p class="about-description">
-                    🌱 Yoga is flourishing everywhere nowadays. We encourage people to practice on cotton mats which are
-                    breathable, environment-friendly, durable and cost-efficient.
-                </p>
-                <p class="about-description">
-                    🌱 The feel is so pleasant while practicing postures and holds even greater significance during
-                    therapy, pranayama, meditation and yoga nidra sessions.
-                </p>
+                </h2>
+
             </div>
             <div class="image-container mb-4 mb-lg-0">
-                <img src="../../../assets/MeditationLid.png" alt="Child doing yoga"
+                <img src="../../../assets/BabyYogamat.png" alt="Child doing yoga"
                     class="imgHeight-fluid rounded yoga-image" />
             </div>
         </div>
         <div class="col-lg-6 d-flex flex-column">
             <div class="image-container mb-5">
-                <img src="../../../assets/MeditationAdult.png" alt="Woman doing yoga in mountains"
+                <img src="../../../assets/youngYogaMat.png" alt="Woman doing yoga in mountains"
                     class="imgHeight-fluid rounded yoga-image" />
             </div>
             <div class="explore-section text-center">
@@ -258,6 +261,14 @@
                         <button type="submit" class="btn btn-success send-btn">Send</button>
                     </div>
                 </form>
+                <div id="successPopup" class="success-section text-center mt-4" style="display: none;">
+                    <img src="./../../../assets/BabyYoga.png" alt="Baby on mat" class="success-img mb-3">
+                    <p class="success-text fw-bold fs-5 text-success">
+                        Thanks. We will look into your email and contact you soon.
+                    </p>
+                </div>
+
+
             </div>
         </div>
     </div>

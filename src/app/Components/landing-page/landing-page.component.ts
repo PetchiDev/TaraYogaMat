@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 gsap.registerPlugin(ScrollTrigger);
 interface YogaMat {
@@ -66,9 +67,9 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     });
 
     // 🌿 Yoga Heading + Image fade-in on scroll both directions
-    gsap.from('.heading-section p', {
+    gsap.from('.heading-section h2', {
       scrollTrigger: {
-        trigger: '.heading-section p',
+        trigger: '.heading-section h2',
         start: 'top 80%',
         toggleActions: 'play reverse play reverse'
       },
@@ -181,16 +182,45 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   submitted = false;
 
 
-
   onSubmit() {
     this.submitted = true;
 
     if (this.contactForm.valid) {
-      // Here you would handle form submission to your backend
-      console.log('Form submitted:', this.contactForm.value);
-      // Reset form after submission
-      this.contactForm.reset();
-      this.submitted = false;
+      const formData = this.contactForm.value;
+
+      const templateParams = {
+        name: formData.name,
+        emailid: formData.email,
+        message: formData.message,
+        mobilenumber: formData.mobile,
+      };
+
+      emailjs.send(
+        'service_f7j76ht',     // 🔁 Replace with your EmailJS service ID
+        'template_n5ezl0j',    // 🔁 Replace with your EmailJS template ID
+        templateParams,
+        'Qn8KLHV507GPmYwCM'         // 🔁 Replace with your EmailJS public key
+      ).then(
+        (result: EmailJSResponseStatus) => {
+          console.log(result.text);
+
+          this.contactForm.reset();
+
+          this.submitted = false;
+          const popup = document.getElementById('successPopup');
+          if (popup) {
+            popup.style.display = 'block';
+
+            setTimeout(() => {
+              popup.style.display = 'none';
+            }, 4000); // Hide after 4 seconds
+          }
+        },
+        (error) => {
+          console.log(error.text);
+          alert('Something went wrong. Please try again.');
+        }
+      );
     }
   }
 
@@ -285,6 +315,17 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   routeCategory() {
     this.route.navigate(['/collections']);
   }
+
+  product1Image = false;
+  product2Image = false;
+  displayproduct1() {
+    this.product1Image = !this.product1Image;
+  }
+
+  showSuccess = false; // For displaying the success section
+
+
+
   ngOnDestroy() {
     ScrollTrigger.getAll().forEach(t => t.kill());
   }
