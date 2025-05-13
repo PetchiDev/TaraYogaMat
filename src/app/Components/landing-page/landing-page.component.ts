@@ -21,6 +21,52 @@ interface YogaMat {
 })
 export class LandingPageComponent implements AfterViewInit, OnDestroy {
 
+
+  @ViewChild('carousel') carouselRef!: ElementRef;
+
+  slides = [
+    {
+      image: './../../../assets/Media (10).jpg',
+      title: 'Cotton Yoga Mat',
+      desc: 'Breathable and comfy mat for daily practice.'
+    },
+    {
+      image: './../../../assets/Media (11).jpg',
+      title: 'Natural Vibes',
+      desc: 'Eco-friendly comfort with every pose.'
+    },
+    {
+      image: './../../../assets/Media (12).jpg',
+      title: 'Therapy Session',
+      desc: 'Perfect for yoga nidra and healing.'
+    },
+    {
+      image: './../../../assets/Media (4).jpg',
+      title: 'Focus & Calm',
+      desc: 'Enhance meditation on cotton.'
+    },
+    {
+      image: './../../../assets/Media (6).jpg',
+      title: 'Everyday Practice',
+      desc: 'Durable and washable fabric base.'
+    },
+    {
+      image: './../../../assets/Media (5).jpg',
+      title: 'Pure Posture',
+      desc: 'Comfort while holding long poses.'
+    }
+  ];
+
+
+  stackedImages = [
+    'assets/img1.jpg',
+    'assets/img2.jpg',
+    'assets/img3.jpg',
+    'assets/img4.jpg',
+    'assets/img5.jpg',
+  ];
+
+
   constructor(private readonly formBuilder: FormBuilder, private readonly route: Router, private el: ElementRef) {
     this.contactForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -176,11 +222,43 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
       }
     });
 
+    const slides = this.carouselRef.nativeElement.children;
+    let current = 0;
+    const total = slides.length;
+
+    const animate = () => {
+      for (let i = 0; i < total; i++) {
+        const diff = Math.abs(current - i);
+        const scale = i === current ? 1 : 0.7;
+        const rotateY = (i - current) * 30;
+        const translateX = (i - current) * 100;
+
+        gsap.to(slides[i], {
+          scale,
+          opacity: i === current ? 1 : 0.5,
+          rotateY,
+          x: translateX,
+          zIndex: total - diff,
+          duration: 1.2,
+          ease: 'power3.inOut'
+        });
+      }
+
+      current = (current + 1) % total;
+      setTimeout(animate, 3000);
+    };
+
+    animate();
+
   }
 
   contactForm: FormGroup;
   submitted = false;
 
+
+  goToAboutUs() {
+    this.route.navigate(['/aboutUs']);
+  }
 
   onSubmit() {
     this.submitted = true;

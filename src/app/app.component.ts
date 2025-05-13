@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   constructor(private readonly router: Router) { }
 
@@ -22,5 +22,10 @@ export class AppComponent implements OnInit {
         }, 500); // Give some time for new DOM to load
       }
     });
+  }
+
+
+  ngOnDestroy() {
+    ScrollTrigger.getAll().forEach(t => t.kill());
   }
 }

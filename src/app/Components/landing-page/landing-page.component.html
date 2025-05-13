@@ -6,16 +6,13 @@
         <h1 #heroTitle class="hero-title">
             It's time to feel the perfect<br> grounding experience
         </h1>
-
         <p #heroSubtitle class="hero-subtitle mb-1">Hop on to your</p>
         <p #heroSubtitle class="hero-subtitle fw-bold text-uppercase mb-1">Environment Friendly</p>
         <p #heroSubtitle class="hero-subtitle fw-bold text-uppercase mb-1">100% Cotton Handloom Mats</p>
         <p #heroSubtitle class="hero-subtitle">from</p>
-
         <button #heroButton class="btn btn-success rounded-pill px-4 py-2 mt-3">
             Tara Green Yoga
         </button>
-
     </div>
 </div>
 <!-- yoga-collection.component.html -->
@@ -35,10 +32,16 @@
             <div class="heading-section mb-5">
                 <h2 class="about-description">
                     🌱 Tara Green Yoga has been started with a vision of providing environment friendly cotton yoga mats
-                    to
-                    maximum number of people.
+                    to maximum number of people.
+                    <br><br>
+                    🌱 Yoga is flourishing everywhere nowadays. We encourage people to practice on cotton mats which are
+                    breathable,
+                    environment-friendly, durable and cost-efficient.
+                    <br><br>
+                    🌱 The feel is so pleasant while practicing postures and holds even greater significance during
+                    therapy,
+                    pranayama, meditation and yoga nidra sessions.
                 </h2>
-
             </div>
             <div class="image-container mb-4 mb-lg-0">
                 <img src="../../../assets/BabyYogamat.png" alt="Child doing yoga"
@@ -47,8 +50,17 @@
         </div>
         <div class="col-lg-6 d-flex flex-column">
             <div class="image-container mb-5">
-                <img src="../../../assets/youngYogaMat.png" alt="Woman doing yoga in mountains"
-                    class="imgHeight-fluid rounded yoga-image" />
+                <div class="image-stack-containerstack-image">
+                    <div class="carousel-wrapper" #carousel>
+                        <div class="carousel-slide" *ngFor="let item of slides" (click)="goToAboutUs()">
+                            <img [src]="item.image" alt="Yoga Slide" />
+                            <div class="caption">
+                                <h4>{{ item.title }}</h4>
+                                <p>{{ item.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="explore-section text-center">
                 <div class="circle-button mx-auto mb-3" (click)="routeCategory()">
@@ -62,8 +74,6 @@
         </div>
     </div>
 </div>
-
-
 <!--Product and Package-->
 <section class="info-section container py-5">
     <div class="row g-4">
@@ -79,7 +89,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Package Info Card -->
         <div class="col-md-6">
             <div class="info-card-wrapper">
@@ -94,7 +103,6 @@
         </div>
     </div>
 </section>
-
 <!-------Adult Yoga Mat Collection-->
 <!-- yoga-mat-collection.component.html -->
 <div class="container yoga-collection py-5">
@@ -267,8 +275,6 @@
                         Thanks. We will look into your email and contact you soon.
                     </p>
                 </div>
-
-
             </div>
         </div>
     </div>

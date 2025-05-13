@@ -4,6 +4,7 @@ import { LandingPageComponent } from './Components/landing-page/landing-page.com
 import { CategoryPageComponent } from './Components/categories/category-page/category-page.component';
 import { AboutUsComponent } from './Components/Aboutus/about-us/about-us.component';
 import { GalleryCollectionComponent } from './Components/gallery/gallery-collection/gallery-collection.component';
+import { ComingSoonComponent } from './Components/comingSoon/coming-soon/coming-soon.component';
 
 const routes: Routes = [
 
@@ -12,9 +13,8 @@ const routes: Routes = [
   { path: 'collections', component: CategoryPageComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'gallery', component: GalleryCollectionComponent },
-  { path: '**', redirectTo: 'taraGreenYoga' },
-
-
+  { path: 'comingSoon', component: ComingSoonComponent },
+  { path: '**', redirectTo: 'comingSoon' },
 ];
 
 
